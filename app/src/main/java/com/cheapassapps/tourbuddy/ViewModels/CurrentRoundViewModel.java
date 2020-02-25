@@ -3,6 +3,7 @@ package com.cheapassapps.tourbuddy.ViewModels;
 import com.cheapassapps.tourbuddy.Models.Course;
 import com.cheapassapps.tourbuddy.Models.Round;
 import com.cheapassapps.tourbuddy.Models.Tee;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -17,7 +18,7 @@ public class CurrentRoundViewModel extends ViewModel {
         setCurrentRound();
     }
 
-    public MutableLiveData<Round> getCurrentRound(){
+    public LiveData<Round> getCurrentRound(){
         return currentRound;
     }
 

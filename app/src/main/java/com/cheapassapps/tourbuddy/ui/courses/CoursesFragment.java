@@ -1,5 +1,6 @@
 package com.cheapassapps.tourbuddy.ui.courses;
 
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -13,21 +14,27 @@ import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewDebug;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cheapassapps.tourbuddy.MainActivity;
 import com.cheapassapps.tourbuddy.Models.Course;
 import com.cheapassapps.tourbuddy.R;
+import com.cheapassapps.tourbuddy.ViewModels.CurrentRoundViewModel;
+import com.cheapassapps.tourbuddy.ui.NewRoundFragment;
+import com.cheapassapps.tourbuddy.ui.RoundGUI;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CoursesFragment extends Fragment {
 
+    private CurrentRoundViewModel mRoundViewModel;
     private CoursesViewModel mViewModel;
     private ListView listView;
     private CourseAdapter adapter;
@@ -45,9 +52,21 @@ public class CoursesFragment extends Fragment {
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+                mRoundViewModel.setCurrentCourse(mViewModel.getCourse(i));
+
+//                NewRoundFragment fragment = new NewRoundFragment();
+//                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+//
+//                fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
+                RoundGUI fragment = new RoundGUI();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 
@@ -67,6 +86,7 @@ public class CoursesFragment extends Fragment {
                 }
         });
 
+        mRoundViewModel = ViewModelProviders.of(this).get(CurrentRoundViewModel.class);
     }
 
     public class CourseAdapter extends ArrayAdapter<Course>{
