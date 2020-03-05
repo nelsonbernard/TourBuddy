@@ -4,14 +4,90 @@ public class Hole {
 
     private int courseId;
     private int hole_number;
-    private int yardage;
-    private int handicap;
-    private double front;
-    private double middle;
-    private double back;
+    private int par;
+    private int hdcpMen;
+    private int hdcpWomen;
+    private double frontLat = 0;
+    private double frontLong = 0;
+    private double middleLat = 0;
+    private double middleLong = 0;
+    private double backLat = 0;
+    private double backLong = 0;
 
     public Hole(){
 
+    }
+
+    public int getPar() {
+        return par;
+    }
+
+    public void setPar(int par) {
+        this.par = par;
+    }
+
+    public int getHdcpMen() {
+        return hdcpMen;
+    }
+
+    public void setHdcpMen(int hdcpMen) {
+        this.hdcpMen = hdcpMen;
+    }
+
+    public int getHdcpWomen() {
+        return hdcpWomen;
+    }
+
+    public void setHdcpWomen(int hdcpWomen) {
+        this.hdcpWomen = hdcpWomen;
+    }
+
+    public double getFrontLat() {
+        return frontLat;
+    }
+
+    public void setFrontLat(double frontLat) {
+        this.frontLat = frontLat;
+    }
+
+    public double getFrontLong() {
+        return frontLong;
+    }
+
+    public void setFrontLong(double frontLong) {
+        this.frontLong = frontLong;
+    }
+
+    public double getMiddleLat() {
+        return middleLat;
+    }
+
+    public void setMiddleLat(double middleLat) {
+        this.middleLat = middleLat;
+    }
+
+    public double getMiddleLong() {
+        return middleLong;
+    }
+
+    public void setMiddleLong(double middleLong) {
+        this.middleLong = middleLong;
+    }
+
+    public double getBackLat() {
+        return backLat;
+    }
+
+    public void setBackLat(double backLat) {
+        this.backLat = backLat;
+    }
+
+    public double getBackLong() {
+        return backLong;
+    }
+
+    public void setBackLong(double backLong) {
+        this.backLong = backLong;
     }
 
     public int getCourseId() {
@@ -28,45 +104,5 @@ public class Hole {
 
     public void setHole_number(int hole_number) {
         this.hole_number = hole_number;
-    }
-
-    public int getYardage() {
-        return yardage;
-    }
-
-    public void setYardage(int yardage) {
-        this.yardage = yardage;
-    }
-
-    public int getHandicap() {
-        return handicap;
-    }
-
-    public void setHandicap(int handicap) {
-        this.handicap = handicap;
-    }
-
-    public double getFront() {
-        return front;
-    }
-
-    public void setFront(double front) {
-        this.front = front;
-    }
-
-    public double getMiddle() {
-        return middle;
-    }
-
-    public void setMiddle(double middle) {
-        this.middle = middle;
-    }
-
-    public double getBack() {
-        return back;
-    }
-
-    public void setBack(double back) {
-        this.back = back;
     }
 }
