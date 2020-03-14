@@ -19,16 +19,8 @@ import androidx.lifecycle.MutableLiveData;
 
 public class CurrentRoundViewModel extends AndroidViewModel {
     private MutableLiveData<Round> currentRound = new MutableLiveData<>();
-    //private Round round = new Round();
 
     public CurrentRoundViewModel(@NonNull Application application){ super(application); Round round = new Round(); currentRound.setValue(round); }
-
-//    public CurrentRoundViewModel() {
-//        this.currentRound = new MutableLiveData<>();
-//        this.round = new Round();
-//        this.round = getRound(1);
-//        setCurrentRound();
-//    }
 
     public MutableLiveData<Round> getCurrentRound(){
         getCourseInfo("http://nelsonbernard.com/tourbuddy/courseinfo.php");
@@ -43,37 +35,19 @@ public class CurrentRoundViewModel extends AndroidViewModel {
         Round round = currentRound.getValue();
         round.setCourse(course);
         currentRound.setValue(round);
-        //this.round.setCourse(course);
-        //setCurrentRound();
     }
 
     public void setCurrentTee(Tee tee){
         Round round = currentRound.getValue();
         round.setTee(tee);
         currentRound.setValue(round);
-        //this.round.setTee(tee);
-        //setCurrentRound();
     }
 
     public void setHoleScore(int holeNum, int score){
         Round round = currentRound.getValue();
         round.setScore(holeNum, score);
         currentRound.setValue(round);
-//        this.round.setScore(holeNum, score);
-//        setCurrentRound();
     }
-
-
-//    public Round getRound(int index){
-//        getCourseInfo("http://nelsonbernard.com/tourbuddy/courseinfo.php");
-//        return round;
-//    }
-
-//    public void setRound(Round r){
-//        this.round = r;
-//        setCurrentRound();
-//    }
-
 
     private void getCourseInfo(final String urlWebService){
         class GetJSON extends AsyncTask<Void, Void, String> {
@@ -110,6 +84,7 @@ public class CurrentRoundViewModel extends AndroidViewModel {
                         hole.setBackLong(Double.parseDouble(jsonObject.getString("backlong")));
 
                         round.setHole(i, hole);
+
                     }
 
                     currentRound.setValue(round);
