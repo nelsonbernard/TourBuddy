@@ -7,6 +7,7 @@ public class Hole {
     private int par;
     private int hdcpMen;
     private int hdcpWomen;
+    private int yards;
     private double frontLat = 0;
     private double frontLong = 0;
     private double middleLat = 0;
@@ -25,6 +26,10 @@ public class Hole {
     public void setPar(int par) {
         this.par = par;
     }
+
+    public int getYards() { return yards; }
+
+    public void setYards(int yards) { this.yards = yards;}
 
     public int getHdcpMen() {
         return hdcpMen;

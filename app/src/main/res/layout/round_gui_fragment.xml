@@ -7,31 +7,6 @@
     android:background="@color/common_google_signin_btn_text_dark_focused"
     tools:context="com.cheapassapps.tourbuddy.Views.RoundGUI">
 
-    <TextView
-        android:id="@+id/txtYards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:text="Yds"
-        android:textColor="@color/colorButton"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/map"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtYardsNum"
-        app:layout_constraintTop_toTopOf="@+id/txtYardsNum" />
-
-    <TextView
-        android:id="@+id/txtParNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="5"
-        android:textColor="@android:color/holo_blue_light"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/txtPar"
-        app:layout_constraintTop_toBottomOf="@+id/txtHole" />
-
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="0dp"
@@ -321,107 +296,157 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/map"
-        android:layout_width="200dp"
-        android:layout_height="454dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/txtBack"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="200"
-        android:textAlignment="center"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/map"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtYardsNum" />
-
-    <TextView
-        android:id="@+id/txtFront"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="150"
-        android:textAlignment="center"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/map"
-        app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCenter" />
-
-    <TextView
-        android:id="@+id/txtCenter"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="175"
-        android:textAlignment="center"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/map"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBack" />
-
-    <TextView
-        android:id="@+id/txtHole"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Hole"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/map"
-        app:layout_constraintHorizontal_bias="0.161"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/map" />
-
-    <TextView
-        android:id="@+id/txtPar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Par "
-        android:textColor="@android:color/holo_blue_light"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/txtHole"
-        app:layout_constraintTop_toBottomOf="@+id/txtHole" />
-
-    <TextView
-        android:id="@+id/txtYardsNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:text="523"
-        android:textColor="@color/colorButton"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/txtPar"
-        app:layout_constraintTop_toBottomOf="@+id/txtPar" />
+        android:background="#BB000000"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="@+id/map"
+        app:layout_constraintTop_toTopOf="@+id/map">
 
-    <TextView
-        android:id="@+id/txtHoleNum"
-        android:layout_width="54sp"
+        <TextView
+            android:id="@+id/txtHoleNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="18th"
+            android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtYardsNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="523"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/txtHoleNum" />
+
+        <TextView
+            android:id="@+id/txtYards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Yds"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/txtYardsNum"
+            app:layout_constraintTop_toTopOf="@+id/txtYardsNum" />
+
+        <TextView
+            android:id="@+id/txtPar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Par "
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtHoleNum"
+            app:layout_constraintStart_toEndOf="@+id/txtYards"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtParNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="5"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/txtPar"
+            app:layout_constraintTop_toTopOf="@+id/txtPar" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/holo_green_dark"
+            android:padding="2dp"
+            android:text="-10"
+            android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtYards"
+            app:layout_constraintTop_toBottomOf="@+id/txtPar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="10dp"
-        android:text="18"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/map"
-        app:layout_constraintStart_toEndOf="@+id/txtHole"
-        app:layout_constraintTop_toTopOf="@+id/txtHole" />
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="48dp"
+        android:background="#BB000000"
+        app:layout_constraintBottom_toBottomOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="@+id/map">
+
+        <TextView
+            android:id="@+id/txtBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="200"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtCenter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="175"
+            android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBack" />
+
+        <TextView
+            android:id="@+id/txtFront"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="150"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCenter" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

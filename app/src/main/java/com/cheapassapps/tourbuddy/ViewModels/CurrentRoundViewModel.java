@@ -67,6 +67,10 @@ public class CurrentRoundViewModel extends AndroidViewModel {
 
                     Round round;
                     round = currentRound.getValue();
+                    Course course = new Course();
+                    course.setName("River Oaks");
+                    course.setCourseId(4);
+                    round.setCourse(course);
 
                     for(int i = 0; i < jsonArray.length(); i++){
                         jsonObject = jsonArray.getJSONObject(i);
@@ -74,6 +78,7 @@ public class CurrentRoundViewModel extends AndroidViewModel {
                         Hole hole = new Hole();
                         hole.setHole_number(Integer.parseInt(jsonObject.getString("holenum")));
                         hole.setPar(Integer.parseInt(jsonObject.getString("par")));
+                        hole.setYards(Integer.parseInt(jsonObject.getString("yards")));
                         hole.setHdcpMen(Integer.parseInt(jsonObject.getString("hdcp_men")));
                         hole.setHdcpWomen(Integer.parseInt(jsonObject.getString("hdcp_women")));
                         hole.setFrontLat(Double.parseDouble(jsonObject.getString("frontlat")));
